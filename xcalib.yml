@@ -1,0 +1,27 @@
+name       : xcalib
+version    : 0.8
+release    : 1
+source     :
+    - http://downloads.sourceforge.net/xcalib/xcalib-source-0.8.tar.gz : 8a112ee710e5446f6c36e62345b2066f10639d500259db8c48bf1716caea06e6
+license    : GPL-2
+component  : xorg
+summary    : Tiny monitor calibration loader for X.org
+description: |
+    Tiny monitor calibration loader for X.org
+
+builddeps:
+    - xorg-server-devel
+    - libxxf86vm-devel
+    - libxext-devel
+
+setup      : |
+    sed 's/local\/bin/\bin/g' -i Makefile
+
+build      : |
+        cc -O2 -c xcalib.c -I/usr/X11R6/include -DXCALIB_VERSION=\"0.8\"
+        cc -O2 -L/usr/X11R6/lib  -o xcalib xcalib.o -lX11 -lXxf86vm -lXext -lm
+
+install    : |
+    mkdir -p $installdir/usr/bin
+    %make_install
+    chmod +x $installdir/usr/bin/xcalib
