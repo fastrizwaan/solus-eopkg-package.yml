@@ -8,8 +8,9 @@ My Solus' package.yml files I use; required to build eopkg for Solus.
 
 2. build the package
 
->ypkg package.yml
->ex. ypkg xcalib.yml
+> ypkg package.yml
+
+for example: ypkg xcalib.yml
 
 3. install the built package
 
