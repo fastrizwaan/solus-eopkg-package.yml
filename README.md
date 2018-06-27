@@ -6,12 +6,12 @@ My Solus' package.yml files I use; required to build eopkg for Solus.
 
 > sudo eopkg it -c system.devel
 
-1. build the package
+2. build the package
 
 >ypkg package.yml
 >ex. ypkg xcalib.yml
 
-1. install the built package
+3. install the built package
 
 >sudo eopkg it xcalib*.eopkg
 
