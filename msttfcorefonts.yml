@@ -1,0 +1,17 @@
+name       : msttfcorefonts
+version    : 1
+release    : 0
+source     :
+    - https://od.lk/d/OTRfMTY5NzIwNDNf/msttfcorefonts.tar.xz : 1c6265476add06805f833f55bcd451a16d1f0999d84d8b162676c1cdba39c851
+license    : non-free
+summary    : core microsoft fonts Arial, Times, etc.
+
+description: |
+    andalemo arialbd arialbi ariali arial ariblk comicbd comic courbd courbi couri cour georgiab georgiai georgia georgiaz impact timesbd timesbi timesi times trebucbd trebucbi trebucit trebuc verdanab verdanai verdana verdanaz webdings
+
+     
+install    : |
+    mkdir -p $installdir/usr/share/fonts/truetype/msttfcorefonts/
+    install -D -m 00644 $workdir/* $installdir/usr/share/fonts/truetype/msttfcorefonts/
+    
+
