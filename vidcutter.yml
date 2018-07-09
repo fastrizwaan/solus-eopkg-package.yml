@@ -1,0 +1,30 @@
+name       : vidcutter
+version    : 0.5.5
+release    : 1
+source     :
+    - https://github.com/ozmartian/vidcutter/archive/5.5.0.tar.gz : 0ea962a6bbad45983a37d1961aca866382228e018043c728d35365599acc0cd5
+license    : GPL-3+
+component  : editor
+summary    : the simplest + fastest video cutter & joiner
+description: |
+    VidCutter - the simplest + fastest video cutter & joiner
+
+builddeps:
+    - python3-qt5
+    - mpv-libs-devel
+    - ffmpeg-devel
+
+rundeps :
+    - ffmpeg
+    - mpv-libs
+    - mediainfo
+
+setup      : |
+    sed -i "s/pypi/rpm/" "vidcutter/__init__.py"
+
+build      : |
+    python3 setup.py build
+
+install    : |
+    python3 setup.py install --root $installdir
+
