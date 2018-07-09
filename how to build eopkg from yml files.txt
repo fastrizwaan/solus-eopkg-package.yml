@@ -1,0 +1,5 @@
+sudo eopkg install -c system.devel
+sudo ypkg-install-deps package.yml
+ypkg package.yml
+
+
