@@ -1,0 +1,21 @@
+name       : adwaita-qt
+version    : 10
+release    : 1
+source     :
+    - https://github.com/FedoraQt/adwaita-qt/archive/1.0.tar.gz : c2c0c71b131d0e3e58ee108570796cf70b35dccaa64ce17915d4486de5e91513
+license    : GPL-3.0
+component  : themes
+summary    : A style to bend Qt applications to look like they belong into GNOME Shell
+
+description: |
+    A style to bend Qt applications to look like they belong into GNOME Shell
+
+builddeps  :
+    - qt5-base-devel
+rundeps    :
+    - python-sdl2
+build      : |
+    %cmake
+    %make
+install    : |
+    %make_install
